@@ -1,0 +1,15 @@
+[Unit]
+Description=FR03 Vault Nightly Synchronization & PDF Optimization
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /home/h4rman/fr03-vault/sync_vault.py
+WorkingDirectory=/home/h4rman/fr03-vault
+StandardOutput=append:/home/h4rman/fr03-vault/sync.log
+StandardError=append:/home/h4rman/fr03-vault/sync.log
+Environment=PATH=/home/h4rman/.local/bin:/usr/local/bin:/usr/bin:/bin
+
+[Install]
+WantedBy=default.target
