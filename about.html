@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>About · FR03-Vault</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-mono/style.css">
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #ededed;
+      --muted: #737373;
+      --border: #262626;
+      --font-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding: 48px 24px 96px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .subtext {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    h2 {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #fff;
+    }
+
+    p {
+      color: #a3a3a3;
+      font-size: 14px;
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      background: #141414;
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #fff;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    li {
+      color: #a3a3a3;
+      font-size: 13.5px;
+    }
+
+    li::before {
+      content: "· ";
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #525252;
+    }
+
+    footer a {
+      color: #737373;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <h1>FR03-Vault</h1>
+      <nav>
+        <a href="index.html">archive</a>
+        <span style="color: var(--border); margin: 0 8px;">/</span>
+        <a href="about.html" class="active">about</a>
+      </nav>
+    </div>
+    <p class="subtext">why this exists and how it works.</p>
+  </header>
+
+  <article>
+    <section>
+      <h2>the problem</h2>
+      <p>teachers write their notes on ipads using whiteboard software. the default quartz pdf exporter dumps every handwritten pen stroke as an uncompressed vector path. a single two-hour coordinate geometry or rotational dynamics lecture quickly swells into a 180 to 320 megabyte file.</p>
+      <p>google drive's web previewer quietly gives up on anything over 50 mb. when you are sitting in a library on two bars of mobile data trying to verify a single integration step, drive demands that you download a quarter-gigabyte file just to view page 42.</p>
+    </section>
+
+    <section>
+      <h2>the pipeline</h2>
+      <p>every night at 23:30, an automated engine checks the faculty shared drives:</p>
+      <ul>
+        <li>physics and chemistry materials are mirrored server-side (zero network egress).</li>
+        <li>oversized mathematics notes are rendered to clean 150 dpi rasters, repacked into lean documents (15–25 mb), and uploaded back.</li>
+        <li>handwritten algebra and subscript fractions stay sharp on tablet retina screens while opening in under a second on mobile networks.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>access model</h2>
+      <p>the links on this site point directly to view-only google drive file previews. you get direct access to the lecture notes without needing root drive folders or account permissions.</p>
+    </section>
+
+    <section>
+      <h2>disclaimer</h2>
+      <p>this is not an official coaching institute portal. please do not email administrative faculty asking why their slide decks are linked on github.</p>
+    </section>
+
+    <section>
+      <h2>maintainer</h2>
+      <p>built and maintained by harman for the fr03 batch. running on arch linux, rclone, and nightly python timers.</p>
+    </section>
+  </article>
+
+  <footer>
+    <span><a href="index.html">← return to archive</a></span>
+    <span><a href="https://github.com/Harman209/fr03-vault" target="_blank" rel="noopener">github source</a></span>
+  </footer>
+
+</body>
+</html>

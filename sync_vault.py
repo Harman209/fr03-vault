@@ -158,6 +158,23 @@ def main():
     for subj in subjects_to_sync:
         sync_subject(subj)
 
+    # Auto-refresh manifest and data.js for GitHub Pages
+    try:
+        manifest_path = Path(__file__).parent / "manifest.json"
+        cmd_manifest = [
+            "rclone", "lsjson", "-R", "--files-only",
+            f"gdrive,root_folder_id={VAULT_ID}:"
+        ]
+        res = subprocess.run(cmd_manifest, stdout=subprocess.PIPE, text=True)
+        if res.returncode == 0:
+            with open(manifest_path, "w", encoding="utf-8") as f:
+                f.write(res.stdout)
+            import build_site
+            build_site.main()
+            print("[vault] github pages site data updated.")
+    except Exception as e:
+        print(f"[vault] site build notice: {e}", file=sys.stderr)
+
     print("\n[vault] all operations completed successfully.")
 
 if __name__ == "__main__":

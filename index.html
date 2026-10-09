@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>FR03-Vault</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-mono/style.css">
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #ededed;
+      --muted: #737373;
+      --border: #262626;
+      --hover: #171717;
+      --font-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 48px 24px 96px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      transition: color 0.15s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .subtext {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .filter-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: inherit;
+      padding: 0;
+      transition: color 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--text);
+    }
+
+    .filter-btn.active {
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .search-bar {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      padding: 8px 0;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-bar:focus {
+      border-bottom-color: #ffffff;
+    }
+
+    .search-bar::placeholder {
+      color: #404040;
+    }
+
+    .vault-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .list-header {
+      display: grid;
+      grid-template-columns: 90px 85px 1fr 70px 60px;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .entry-row {
+      display: grid;
+      grid-template-columns: 90px 85px 1fr 70px 60px;
+      gap: 12px;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px solid #141414;
+      text-decoration: none;
+      color: inherit;
+      transition: background-color 0.1s ease;
+    }
+
+    .entry-row:hover {
+      background-color: var(--hover);
+    }
+
+    .col-date {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .col-subject {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #a3a3a3;
+    }
+
+    .col-title {
+      font-size: 13.5px;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .col-size {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .col-action {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .col-action a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .col-action a:hover {
+      color: var(--muted);
+    }
+
+    .empty-state {
+      padding: 48px 0;
+      text-align: center;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #525252;
+    }
+
+    footer a {
+      color: #737373;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 640px) {
+      .list-header {
+        display: none;
+      }
+      .entry-row {
+        grid-template-columns: 1fr 70px;
+        gap: 6px;
+        padding: 12px 0;
+      }
+      .col-date, .col-size {
+        display: none;
+      }
+      .col-subject {
+        font-size: 11px;
+        grid-column: 1 / 2;
+      }
+      .col-title {
+        grid-column: 1 / 2;
+        font-size: 14px;
+        white-space: normal;
+      }
+      .col-action {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        align-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <h1>FR03-Vault</h1>
+      <nav>
+        <a href="index.html" class="active">archive</a>
+        <span style="color: var(--border); margin: 0 8px;">/</span>
+        <a href="about.html">about</a>
+      </nav>
+    </div>
+    <p class="subtext">academic notes, recordings, and mathematical suffering. compressed so drive stops begging you to download 200mb on 5g.</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <input type="text" id="searchInput" class="search-bar" placeholder="type to filter files (e.g. gravitation, straight lines, mole concept)..." autocomplete="off" spellcheck="false">
+      
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">all (<span id="count-all">0</span>)</button>
+        <span>·</span>
+        <button class="filter-btn" data-filter="physics">physics (<span id="count-physics">0</span>)</button>
+        <span>·</span>
+        <button class="filter-btn" data-filter="chemistry">chemistry (<span id="count-chemistry">0</span>)</button>
+        <span>·</span>
+        <button class="filter-btn" data-filter="maths">maths (<span id="count-maths">0</span>)</button>
+        <span>·</span>
+        <button class="filter-btn" data-filter="recording">recordings (<span id="count-recording">0</span>)</button>
+      </div>
+    </div>
+
+    <div class="vault-list">
+      <div class="list-header">
+        <span>date</span>
+        <span>subject</span>
+        <span>topic</span>
+        <span style="text-align: right;">size</span>
+        <span style="text-align: right;">file</span>
+      </div>
+      <div id="entriesContainer"></div>
+    </div>
+  </main>
+
+  <footer>
+    <span>curated by harman · nightly automated sync</span>
+    <span><a href="https://github.com/Harman209/fr03-vault" target="_blank" rel="noopener">source</a></span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    (function() {
+      const container = document.getElementById('entriesContainer');
+      const searchInput = document.getElementById('searchInput');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const data = window.VAULT_DATA || [];
+
+      let currentFilter = 'all';
+      let searchQuery = '';
+
+      // Update counters
+      document.getElementById('count-all').textContent = data.length;
+      document.getElementById('count-physics').textContent = data.filter(d => d.subject === 'physics').length;
+      document.getElementById('count-chemistry').textContent = data.filter(d => d.subject === 'chemistry').length;
+      document.getElementById('count-maths').textContent = data.filter(d => d.subject === 'maths').length;
+      document.getElementById('count-recording').textContent = data.filter(d => d.subject === 'recording').length;
+
+      function render() {
+        const query = searchQuery.toLowerCase().trim();
+        const filtered = data.filter(item => {
+          const matchesFilter = (currentFilter === 'all') || (item.subject === currentFilter);
+          const matchesSearch = !query || 
+            item.title.toLowerCase().includes(query) || 
+            item.subject.toLowerCase().includes(query) ||
+            item.path.toLowerCase().includes(query);
+          return matchesFilter && matchesSearch;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = '<div class="empty-state">nothing found. either you misspelled it or the teacher hasn\'t taught it yet.</div>';
+          return;
+        }
+
+        container.innerHTML = filtered.map(item => `
+          <div class="entry-row">
+            <span class="col-date">${item.date}</span>
+            <span class="col-subject">${item.subject}</span>
+            <span class="col-title" title="${item.title}">${item.title}</span>
+            <span class="col-size">${item.size}</span>
+            <span class="col-action">
+              <a href="${item.url}" target="_blank" rel="noopener">open ↗</a>
+            </span>
+          </div>
+        `).join('');
+      }
+
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        render();
+      });
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.filter;
+          render();
+        });
+      });
+
+      // Keyboard shortcut: '/' or 'cmd+k' focuses search
+      window.addEventListener('keydown', (e) => {
+        if ((e.key === '/' || (e.metaKey && e.key === 'k')) && document.activeElement !== searchInput) {
+          e.preventDefault();
+          searchInput.focus();
+        }
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>
