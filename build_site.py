@@ -79,6 +79,29 @@ def main():
             "url": f"https://drive.google.com/file/d/{item_id}/view"
         })
 
+    # Include lecture recordings discovered from email
+    mail_rec_file = Path(__file__).parent / "mail_recordings.json"
+    if mail_rec_file.exists():
+        try:
+            with open(mail_rec_file, "r", encoding="utf-8") as f:
+                mail_recs = json.load(f)
+            for r in mail_recs:
+                if not r.get("url"):
+                    continue
+                d = r.get("date", "").replace("/", "-")[:10]
+                entries.append({
+                    "title": r.get("title", ""),
+                    "rawName": r.get("title", ""),
+                    "subject": "recording",
+                    "path": f"recordings/{r.get('sub_category', 'general')}",
+                    "size": "stream",
+                    "sizeBytes": 0,
+                    "date": d,
+                    "url": r.get("url")
+                })
+        except Exception as e:
+            print(f"warning: error reading mail_recordings.json: {e}")
+
     # Sort newest first
     entries.sort(key=lambda x: (x["date"], x["title"]), reverse=True)
 
