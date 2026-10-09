@@ -17,19 +17,21 @@ from pathlib import Path
 from PIL import Image
 
 REMOTE = "gdrive:"
+VAULT_ID = "1ciGDAf-Lw8Ep8C4wXI9rXiW_a04tfGag"
+VAULT_DEST = f"gdrive,root_folder_id={VAULT_ID}:"
 
 SUBJECTS = {
     "physics": {
         "src": f"{REMOTE}FR03 (2026-27)",
-        "dest": f"{REMOTE}vault/notes/physics",
+        "dest": f"{VAULT_DEST}notes/physics",
     },
     "chemistry": {
         "src": f"{REMOTE}FR-03",
-        "dest": f"{REMOTE}vault/notes/chemistry",
+        "dest": f"{VAULT_DEST}notes/chemistry",
     },
     "maths": {
         "src": f"{REMOTE}FR03 Maths Notes 2026-28",
-        "dest": f"{REMOTE}vault/notes/maths",
+        "dest": f"{VAULT_DEST}notes/maths",
     },
 }
 
