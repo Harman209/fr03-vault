@@ -28,16 +28,16 @@
       color: var(--text);
       font-family: var(--font-sans);
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       padding: 48px 24px 96px;
-      max-width: 620px;
+      max-width: 860px;
       margin: 0 auto;
     }
 
     header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
       border-bottom: 1px solid var(--border);
       padding-bottom: 28px;
     }
@@ -55,6 +55,10 @@
       color: var(--muted);
       font-size: 13px;
       margin-bottom: 16px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
     }
 
     nav {
@@ -83,14 +87,27 @@
     }
 
     article {
+      max-width: 560px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 20px;
+      line-height: 1.7;
     }
 
     p {
       color: #a3a3a3;
-      font-size: 14.5px;
+      font-size: 14px;
+    }
+
+    .notice {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.6;
+      color: #737373;
+      border-left: 2px solid var(--border);
+      padding-left: 14px;
+      margin-top: 8px;
     }
 
     .meta {
@@ -99,7 +116,7 @@
       color: var(--muted);
       border-top: 1px solid var(--border);
       padding-top: 20px;
-      margin-top: 12px;
+      margin-top: 8px;
     }
 
     footer {
@@ -128,7 +145,7 @@
 
   <header>
     <h1>fr03-vault</h1>
-    <p class="subtext">why this exists and how it works.</p>
+    <p class="subtext">academic notes, recordings, and mathematical suffering. compressed so drive stops begging you to download 200mb on 5g.</p>
     <nav>
       <a href="index.html">archive</a>
       <span class="sep">/</span>
@@ -137,20 +154,22 @@
   </header>
 
   <article>
-    <p>teachers export handwritten notes from ipads as raw vector pen strokes. a single two-hour class easily turns into a 200 mb pdf. google drive refuses to preview anything over 50 mb, so every time you need to check a formula on mobile data, drive demands you download a massive file just to see one page.</p>
+    <p>teachers export handwritten whiteboard notes from ipads as raw vector pen strokes. a single two-hour lecture easily turns into a 200 mb pdf. google drive refuses to preview anything over 50 mb, so every time you need to check a formula on mobile data, drive demands you download a massive file just to see one page.</p>
 
     <p>this archive fixes that. every night at 23:30, a script checks the teacher folders, pulls the heavy pdfs, crushes them down to ~15 mb at 150 dpi, and syncs them here. drive opens them in half a second, handwriting stays sharp when you zoom in on an ipad, and nobody wastes cellular data.</p>
 
     <p>all links on this page point directly to view-only files in drive. no root folder access, no sign-in required, zero tracking, no bullshit.</p>
 
-    <p>obviously not an official coaching institute website. please do not email faculty asking why their slide decks are on github.</p>
+    <div class="notice">
+      personal study disclaimer: this archive is strictly personal, non-commercial, and maintained solely as an offline study and revision backup under educational fair use. zero monetization, zero ads, zero distribution of unreleased materials, and zero intent to infringe on anyone's intellectual property. all rights belong entirely to their respective teachers and coaching faculty. if you represent an administrative or legal team and want a file unlinked, open an issue on github or send a message and it will be removed immediately.
+    </div>
 
     <p class="meta">curated by harman for the fr03 batch. built with python, rclone, and minimal html.</p>
   </article>
 
   <footer>
-    <span><a href="index.html">← return to archive</a></span>
-    <span><a href="https://github.com/Harman209/fr03-vault" target="_blank" rel="noopener">github source</a></span>
+    <span>curated by harman · personal study backup</span>
+    <span><a href="https://github.com/Harman209/fr03-vault" target="_blank" rel="noopener">source</a></span>
   </footer>
 
 </body>
