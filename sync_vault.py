@@ -16,27 +16,53 @@ import subprocess
 from pathlib import Path
 from PIL import Image
 
-REMOTE = "gdrive:"
+# ==============================================================================
+# CANONICAL GOOGLE DRIVE OBJECT ID REGISTRY
+# All folder references must use explicit Google Drive object IDs to prevent
+# duplicate folder entities from ever being created by path string resolution.
+# ==============================================================================
 VAULT_ID = "1ciGDAf-Lw8Ep8C4wXI9rXiW_a04tfGag"
-VAULT_DEST = f"gdrive,root_folder_id={VAULT_ID}:"
 
-# Exact folder IDs under vault/notes to prevent duplicate folder creation:
-PHYSICS_DIR_ID = "1bAdpExhZ3-Ne_kBCmI2tJAouC-0IgBvB"
-CHEMISTRY_DIR_ID = "1NI9INBfOV5MRvjIfp-_au5DNFGMg28Oh"
-MATHS_DIR_ID = "1IrFhswIBaxBjUeAjME-7WP6TfnNPe1pv"
+# Vault root-level folders
+VAULT_DIRS = {
+    "notes": "1sFQXJPBTQYa4yYQysChL0UCeVPzucF1i",
+    "recordings": "14oSJVW-yIP3Er03ipAo5EdPM1_Yssrax",
+    "inbox": "1r-RK-QZctc9q2pFVNZE5-qIWQirxtlrZ",
+}
+
+# Subject notes destination folders (under notes/)
+NOTES_DIRS = {
+    "physics": "1bAdpExhZ3-Ne_kBCmI2tJAouC-0IgBvB",
+    "chemistry": "1NI9INBfOV5MRvjIfp-_au5DNFGMg28Oh",
+    "maths": "1IrFhswIBaxBjUeAjME-7WP6TfnNPe1pv",
+}
+
+# Subject recordings destination folders (under recordings/)
+RECORDING_DIRS = {
+    "physics": "1234nsnnGZstHG4-A5eaLzEDqKZ3JgSaq",
+    "chemistry": "1iBz4hnVCgzxYs8COCHJy-SIMubY9-1Uj",
+    "maths": "1J2Kk4MB_7EnhIlWyDK85G7jXzERu3lSZ",
+}
+
+# Shared faculty sources (from teachers)
+SOURCE_DIRS = {
+    "physics": "1sNOVT0wzzhw9gBEci5YVFM0HD6baiidN",     # FR03 (2026-27)
+    "chemistry": "16NCL3mWf8ijTIeUyMplJDNfoewBEN4UP",   # FR-03
+    "maths": "1b-VLTIsb007w1RqU7diAH8rqapUty2WV",       # FR03 Maths Notes 2026-28
+}
 
 SUBJECTS = {
     "physics": {
-        "src": f"{REMOTE}FR03 (2026-27)",
-        "dest": f"gdrive,root_folder_id={PHYSICS_DIR_ID}:",
+        "src": f"gdrive,root_folder_id={SOURCE_DIRS['physics']}:",
+        "dest": f"gdrive,root_folder_id={NOTES_DIRS['physics']}:",
     },
     "chemistry": {
-        "src": f"{REMOTE}FR-03",
-        "dest": f"gdrive,root_folder_id={CHEMISTRY_DIR_ID}:",
+        "src": f"gdrive,root_folder_id={SOURCE_DIRS['chemistry']}:",
+        "dest": f"gdrive,root_folder_id={NOTES_DIRS['chemistry']}:",
     },
     "maths": {
-        "src": f"{REMOTE}FR03 Maths Notes 2026-28",
-        "dest": f"gdrive,root_folder_id={MATHS_DIR_ID}:",
+        "src": f"gdrive,root_folder_id={SOURCE_DIRS['maths']}:",
+        "dest": f"gdrive,root_folder_id={NOTES_DIRS['maths']}:",
     },
 }
 
@@ -100,7 +126,6 @@ def sync_subject(subject_key: str):
     print(f"[vault] {subject_key}: running server-side sync...")
     cmd_sync = [
         "rclone", "copy", src, dest,
-        "--drive-shared-with-me",
         "--drive-server-side-across-configs",
         "--update",
         "-q"

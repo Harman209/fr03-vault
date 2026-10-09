@@ -61,16 +61,37 @@ handwritten stylus text remains crisp under 2x zoom on ipad retina screens while
 
 ## preventing google drive duplicate folders
 
-in google drive, directory names are not unique paths; they are objects with IDs. running multiple creation commands can spawn duplicate folders with the same label.
+in google drive, directory names are not unique paths; they are objects with IDs. running multiple sync or creation commands using string paths (e.g. `notes/maths`) causes google drive to spawn duplicate folder entities with the exact same name.
 
-`fr03-vault` pins the destination folder ID directly:
+`fr03-vault` pins canonical google drive object IDs across the entire hierarchy:
 
 ```python
+# root archive
 VAULT_ID = "1ciGDAf-Lw8Ep8C4wXI9rXiW_a04tfGag"
-VAULT_DEST = f"gdrive,root_folder_id={VAULT_ID}:"
+
+# notes destinations
+NOTES_DIRS = {
+    "physics":   "1bAdpExhZ3-Ne_kBCmI2tJAouC-0IgBvB",
+    "chemistry": "1NI9INBfOV5MRvjIfp-_au5DNFGMg28Oh",
+    "maths":     "1IrFhswIBaxBjUeAjME-7WP6TfnNPe1pv",
+}
+
+# recordings destinations
+RECORDING_DIRS = {
+    "physics":   "1234nsnnGZstHG4-A5eaLzEDqKZ3JgSaq",
+    "chemistry": "1iBz4hnVCgzxYs8COCHJy-SIMubY9-1Uj",
+    "maths":     "1J2Kk4MB_7EnhIlWyDK85G7jXzERu3lSZ",
+}
+
+# coaching faculty sources
+SOURCE_DIRS = {
+    "physics":   "1sNOVT0wzzhw9gBEci5YVFM0HD6baiidN",     # FR03 (2026-27)
+    "chemistry": "16NCL3mWf8ijTIeUyMplJDNfoewBEN4UP",     # FR-03
+    "maths":     "1b-VLTIsb007w1RqU7diAH8rqapUty2WV",     # FR03 Maths Notes 2026-28
+}
 ```
 
-this bypasses name resolution and instructs the google drive api to operate directly inside the target object, making folder duplicates impossible.
+every rclone operation connects directly to `gdrive,root_folder_id=<ID>:`. this bypasses name resolution completely and instructs the google drive api to operate directly inside the target object, making folder duplicates impossible.
 
 ---
 

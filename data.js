@@ -121,6 +121,16 @@ window.VAULT_DATA = [
     "url": "https://drive.google.com/file/d/1RY-FNPDMRGMN4V0GX2YyLs6RKP7l3r7m/view"
   },
   {
+    "title": "Equilibrium",
+    "rawName": "Equilibrium.pdf",
+    "subject": "chemistry",
+    "path": "notes/chemistry/Equilibrium.pdf",
+    "size": "10.2 mb",
+    "sizeBytes": 10676029,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1fBZApbWU3j3u8S9X0eNo9QTd2m6YZRib/view"
+  },
+  {
     "title": "Doubts Fr03-Quad",
     "rawName": "Doubts Fr03-Quad.pdf",
     "subject": "maths",
@@ -149,6 +159,16 @@ window.VAULT_DATA = [
     "sizeBytes": 18056330,
     "date": "2026-10-09",
     "url": "https://drive.google.com/file/d/1R5FasZMLQt26-R19vJKOUxNWd_8Ee-Xz/view"
+  },
+  {
+    "title": "Chemical Bonding",
+    "rawName": "Chemical Bonding.pdf",
+    "subject": "chemistry",
+    "path": "notes/chemistry/Chemical Bonding.pdf",
+    "size": "12.6 mb",
+    "sizeBytes": 13175686,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/16L439bJ0asjm2OHJvv6c0gc6iwOKJHs3/view"
   },
   {
     "title": "Binomial Theorem 3",
@@ -184,21 +204,21 @@ window.VAULT_DATA = [
     "title": "Step-3 Discussion",
     "rawName": "Step-3 Discussion.pdf",
     "subject": "physics",
-    "path": "notes/physics/System of Particles and Rotational Motion/Step-3 Discussion.pdf",
-    "size": "170 kb",
-    "sizeBytes": 174752,
-    "date": "2026-10-04",
-    "url": "https://drive.google.com/file/d/1OA6nc8O9Hj9LEF_-X-WQjDx1dJ3NEVNj/view"
-  },
-  {
-    "title": "Step-3 Discussion",
-    "rawName": "Step-3 Discussion.pdf",
-    "subject": "physics",
     "path": "notes/physics/Work, Energy and Power/Step-3 Discussion.pdf",
     "size": "16.4 mb",
     "sizeBytes": 17169866,
     "date": "2026-10-04",
     "url": "https://drive.google.com/file/d/1wdN6MgP8Nz5QTWdJCZVO4E9stXSd8jLy/view"
+  },
+  {
+    "title": "Step-3 Discussion",
+    "rawName": "Step-3 Discussion.pdf",
+    "subject": "physics",
+    "path": "notes/physics/System of Particles and Rotational Motion/Step-3 Discussion.pdf",
+    "size": "170 kb",
+    "sizeBytes": 174752,
+    "date": "2026-10-04",
+    "url": "https://drive.google.com/file/d/1OA6nc8O9Hj9LEF_-X-WQjDx1dJ3NEVNj/view"
   },
   {
     "title": "Mathematics \u00b7 Lecture-9 - 2026/10/03 12:15 IST",
@@ -259,16 +279,6 @@ window.VAULT_DATA = [
     "sizeBytes": 0,
     "date": "2026-09-29",
     "url": "https://drive.google.com/file/d/1O7h7cpI4lPofgVpxh8l8NTS2tdftWzXv/view"
-  },
-  {
-    "title": "Equilibrium",
-    "rawName": "Equilibrium.pdf",
-    "subject": "chemistry",
-    "path": "notes/chemistry/Equilibrium.pdf",
-    "size": "5.3 mb",
-    "sizeBytes": 5606423,
-    "date": "2026-09-29",
-    "url": "https://drive.google.com/file/d/1COFYE7yuPqOnsd8LfesvnwYhejIbJZKo/view"
   },
   {
     "title": "Sep 28, 2026 Keplar's Laws",
@@ -599,16 +609,6 @@ window.VAULT_DATA = [
     "sizeBytes": 11663532,
     "date": "2026-08-09",
     "url": "https://drive.google.com/file/d/1CdAx46jk2Yh50QPz4RRG_GaFZziJMmq7/view"
-  },
-  {
-    "title": "Chemical Bonding",
-    "rawName": "Chemical Bonding.pdf",
-    "subject": "chemistry",
-    "path": "notes/chemistry/Chemical Bonding.pdf",
-    "size": "37.5 mb",
-    "sizeBytes": 39363253,
-    "date": "2026-08-09",
-    "url": "https://drive.google.com/file/d/16L439bJ0asjm2OHJvv6c0gc6iwOKJHs3/view"
   },
   {
     "title": "Gaseous State",
