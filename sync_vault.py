@@ -20,18 +20,23 @@ REMOTE = "gdrive:"
 VAULT_ID = "1ciGDAf-Lw8Ep8C4wXI9rXiW_a04tfGag"
 VAULT_DEST = f"gdrive,root_folder_id={VAULT_ID}:"
 
+# Exact folder IDs under vault/notes to prevent duplicate folder creation:
+PHYSICS_DIR_ID = "1bAdpExhZ3-Ne_kBCmI2tJAouC-0IgBvB"
+CHEMISTRY_DIR_ID = "1NI9INBfOV5MRvjIfp-_au5DNFGMg28Oh"
+MATHS_DIR_ID = "1IrFhswIBaxBjUeAjME-7WP6TfnNPe1pv"
+
 SUBJECTS = {
     "physics": {
         "src": f"{REMOTE}FR03 (2026-27)",
-        "dest": f"{VAULT_DEST}notes/physics",
+        "dest": f"gdrive,root_folder_id={PHYSICS_DIR_ID}:",
     },
     "chemistry": {
         "src": f"{REMOTE}FR-03",
-        "dest": f"{VAULT_DEST}notes/chemistry",
+        "dest": f"gdrive,root_folder_id={CHEMISTRY_DIR_ID}:",
     },
     "maths": {
         "src": f"{REMOTE}FR03 Maths Notes 2026-28",
-        "dest": f"{VAULT_DEST}notes/maths",
+        "dest": f"gdrive,root_folder_id={MATHS_DIR_ID}:",
     },
 }
 
@@ -131,7 +136,7 @@ def sync_subject(subject_key: str):
             local_out = Path(work_dir) / "compressed.pdf"
 
             # Download raw from dest
-            remote_target = f"{dest}/{rel_path}"
+            remote_target = f"{dest}{rel_path}" if dest.endswith(":") else f"{dest}/{rel_path}"
             dl_cmd = ["rclone", "copyto", remote_target, str(local_raw), "-q"]
             run_cmd(dl_cmd)
 
