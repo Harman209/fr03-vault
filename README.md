@@ -1,4 +1,4 @@
-# aakashvault
+# fr03-vault
 
 automated synchronization and document optimization engine for academic class materials and handwritten tablet notes.
 
@@ -15,7 +15,7 @@ mirrors shared google drive resources server-side, compresses bloated vector lec
 └── FR03 Maths Notes 2026-28    (mathematics: bloated vector exports)
            │
            ▼
-[aakashvault engine]
+[fr03-vault engine]
 ├── physics / chemistry  -> server-side mirror (zero network egress)
 └── mathematics          -> raster compression pipeline (150 dpi, ~85% reduction)
            │
@@ -37,7 +37,7 @@ whiteboard and tablet note applications (such as goodnotes or quartz pdf on ipad
 
 google drive refuses to preview files over 50 mb, forcing students to download hundreds of megabytes on mobile networks just to reference a formula.
 
-`aakashvault` renders vector paths to clean 150 dpi raster frames and repacks them into optimized documents:
+`fr03-vault` renders vector paths to clean 150 dpi raster frames and repacks them into optimized documents:
 - **before:** 152 mb (preview fails, forced download)
 - **after:** 24 mb (sharp algebraic subscripts, instant preview on web and mobile)
 
@@ -94,7 +94,7 @@ python3 compress_pdf.py lecture.pdf -o output.pdf --dpi 150 --quality 85
 to keep the archive synchronized automatically, append a cron job to run at 23:30 daily:
 
 ```bash
-30 23 * * * /usr/bin/python3 /path/to/aakashvault/sync_vault.py >> /path/to/aakashvault/sync.log 2>&1
+30 23 * * * /usr/bin/python3 /path/to/fr03-vault/sync_vault.py >> /path/to/fr03-vault/sync.log 2>&1
 ```
 
 ---
