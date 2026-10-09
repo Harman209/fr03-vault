@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>About · FR03-Vault</title>
+  <title>about · fr03-vault</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-mono/style.css">
   <style>
@@ -31,36 +31,45 @@
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       padding: 48px 24px 96px;
-      max-width: 680px;
+      max-width: 620px;
       margin: 0 auto;
     }
 
     header {
+      text-align: center;
       margin-bottom: 40px;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 24px;
-    }
-
-    .header-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 8px;
+      padding-bottom: 28px;
     }
 
     h1 {
       font-family: var(--font-mono);
-      font-size: 18px;
+      font-size: 32px;
       font-weight: 500;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.04em;
       color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .subtext {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 12px;
     }
 
     nav a {
       color: var(--muted);
       text-decoration: none;
-      font-family: var(--font-mono);
-      font-size: 13px;
+      transition: color 0.15s ease;
     }
 
     nav a:hover, nav a.active {
@@ -69,62 +78,28 @@
       text-underline-offset: 4px;
     }
 
-    .subtext {
-      color: var(--muted);
-      font-size: 13px;
+    nav .sep {
+      color: var(--border);
     }
 
     article {
       display: flex;
       flex-direction: column;
-      gap: 32px;
-    }
-
-    section {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    h2 {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #fff;
+      gap: 22px;
     }
 
     p {
       color: #a3a3a3;
-      font-size: 14px;
+      font-size: 14.5px;
     }
 
-    code {
+    .meta {
       font-family: var(--font-mono);
       font-size: 12px;
-      background: #141414;
-      padding: 2px 6px;
-      border-radius: 3px;
-      color: #fff;
-    }
-
-    ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-top: 4px;
-    }
-
-    li {
-      color: #a3a3a3;
-      font-size: 13.5px;
-    }
-
-    li::before {
-      content: "· ";
       color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      margin-top: 12px;
     }
 
     footer {
@@ -152,48 +127,25 @@
 <body>
 
   <header>
-    <div class="header-top">
-      <h1>FR03-Vault</h1>
-      <nav>
-        <a href="index.html">archive</a>
-        <span style="color: var(--border); margin: 0 8px;">/</span>
-        <a href="about.html" class="active">about</a>
-      </nav>
-    </div>
+    <h1>fr03-vault</h1>
     <p class="subtext">why this exists and how it works.</p>
+    <nav>
+      <a href="index.html">archive</a>
+      <span class="sep">/</span>
+      <a href="about.html" class="active">about</a>
+    </nav>
   </header>
 
   <article>
-    <section>
-      <h2>the problem</h2>
-      <p>teachers write their notes on ipads using whiteboard software. the default quartz pdf exporter dumps every handwritten pen stroke as an uncompressed vector path. a single two-hour coordinate geometry or rotational dynamics lecture quickly swells into a 180 to 320 megabyte file.</p>
-      <p>google drive's web previewer quietly gives up on anything over 50 mb. when you are sitting in a library on two bars of mobile data trying to verify a single integration step, drive demands that you download a quarter-gigabyte file just to view page 42.</p>
-    </section>
+    <p>teachers export handwritten notes from ipads as raw vector pen strokes. a single two-hour class easily turns into a 200 mb pdf. google drive refuses to preview anything over 50 mb, so every time you need to check a formula on mobile data, drive demands you download a massive file just to see one page.</p>
 
-    <section>
-      <h2>the pipeline</h2>
-      <p>every night at 23:30, an automated engine checks the faculty shared drives:</p>
-      <ul>
-        <li>physics and chemistry materials are mirrored server-side (zero network egress).</li>
-        <li>oversized mathematics notes are rendered to clean 150 dpi rasters, repacked into lean documents (15–25 mb), and uploaded back.</li>
-        <li>handwritten algebra and subscript fractions stay sharp on tablet retina screens while opening in under a second on mobile networks.</li>
-      </ul>
-    </section>
+    <p>this archive fixes that. every night at 23:30, a script checks the teacher folders, pulls the heavy pdfs, crushes them down to ~15 mb at 150 dpi, and syncs them here. drive opens them in half a second, handwriting stays sharp when you zoom in on an ipad, and nobody wastes cellular data.</p>
 
-    <section>
-      <h2>access model</h2>
-      <p>the links on this site point directly to view-only google drive file previews. you get direct access to the lecture notes without needing root drive folders or account permissions.</p>
-    </section>
+    <p>all links on this page point directly to view-only files in drive. no root folder access, no sign-in required, zero tracking, no bullshit.</p>
 
-    <section>
-      <h2>disclaimer</h2>
-      <p>this is not an official coaching institute portal. please do not email administrative faculty asking why their slide decks are linked on github.</p>
-    </section>
+    <p>obviously not an official coaching institute website. please do not email faculty asking why their slide decks are on github.</p>
 
-    <section>
-      <h2>maintainer</h2>
-      <p>built and maintained by harman for the fr03 batch. running on arch linux, rclone, and nightly python timers.</p>
-    </section>
+    <p class="meta">curated by harman for the fr03 batch. built with python, rclone, and minimal html.</p>
   </article>
 
   <footer>

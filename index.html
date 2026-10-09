@@ -37,31 +37,43 @@
     }
 
     header {
+      text-align: center;
       margin-bottom: 36px;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 24px;
-    }
-
-    .header-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 8px;
+      padding-bottom: 28px;
     }
 
     h1 {
       font-family: var(--font-mono);
-      font-size: 18px;
+      font-size: 32px;
       font-weight: 500;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.04em;
       color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .subtext {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 16px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 12px;
     }
 
     nav a {
       color: var(--muted);
       text-decoration: none;
-      font-family: var(--font-mono);
-      font-size: 13px;
       transition: color 0.15s ease;
     }
 
@@ -71,9 +83,8 @@
       text-underline-offset: 4px;
     }
 
-    .subtext {
-      color: var(--muted);
-      font-size: 13px;
+    nav .sep {
+      color: var(--border);
     }
 
     .controls {
@@ -272,15 +283,13 @@
 <body>
 
   <header>
-    <div class="header-top">
-      <h1>FR03-Vault</h1>
-      <nav>
-        <a href="index.html" class="active">archive</a>
-        <span style="color: var(--border); margin: 0 8px;">/</span>
-        <a href="about.html">about</a>
-      </nav>
-    </div>
+    <h1>fr03-vault</h1>
     <p class="subtext">academic notes, recordings, and mathematical suffering. compressed so drive stops begging you to download 200mb on 5g.</p>
+    <nav>
+      <a href="index.html" class="active">archive</a>
+      <span class="sep">/</span>
+      <a href="about.html">about</a>
+    </nav>
   </header>
 
   <main>
