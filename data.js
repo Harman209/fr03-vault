@@ -31,6 +31,26 @@ window.VAULT_DATA = [
     "url": "https://drive.google.com/file/d/1YWx3KkaS1vTHAkFLGUaxSsbO1uuzLKUL/view"
   },
   {
+    "title": "log assignment",
+    "rawName": "log assignment.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Assignments/log assignment.pdf",
+    "size": "928 kb",
+    "sizeBytes": 950453,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1rpSdegQxMpqKd8FSXe_SSJZC79z1Al_e/view"
+  },
+  {
+    "title": "Trigonometry Fr03 Notes",
+    "rawName": "Trigonometry Fr03 Notes.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Trigonometry Fr03 Notes.pdf",
+    "size": "66.1 mb",
+    "sizeBytes": 69267637,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1jqfuqnepoIgLt4eeO0AhmQm3wabqHxsN/view"
+  },
+  {
     "title": "Straight Lines FR03",
     "rawName": "Straight Lines FR03.pdf",
     "subject": "maths",
@@ -41,6 +61,56 @@ window.VAULT_DATA = [
     "url": "https://drive.google.com/file/d/1kok7FZSgflQtxFAz9cUGBJePoMHBetxH/view"
   },
   {
+    "title": "Straight Lines FR03",
+    "rawName": "Straight Lines FR03.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Straight Lines FR03.pdf",
+    "size": "23.3 mb",
+    "sizeBytes": 24457286,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1IX6FbD-l0ZoT8B0BfopI9J0B6D3bQsRl/view"
+  },
+  {
+    "title": "Sets notes",
+    "rawName": "Sets notes.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Sets notes.pdf",
+    "size": "23.4 mb",
+    "sizeBytes": 24495581,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1pI076uz9z2I2OztP5aJDcbdAQwZ--OQb/view"
+  },
+  {
+    "title": "Sequence And Series 18",
+    "rawName": "Sequence And Series 18.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Sequence And Series 18.pdf",
+    "size": "41.0 mb",
+    "sizeBytes": 43018558,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1A1f683gBgRvXgUqwIC6xF7Qo_PiOFp-0/view"
+  },
+  {
+    "title": "Quadratic Equations FR03",
+    "rawName": "Quadratic Equations FR03.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Quadratic Equations FR03.pdf",
+    "size": "26.1 mb",
+    "sizeBytes": 27353222,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1ghGIRMWvoLRbt-7OOMrpy62sq2hkk2s4/view"
+  },
+  {
+    "title": "P N C FR03",
+    "rawName": "P N C FR03.pdf",
+    "subject": "maths",
+    "path": "notes/maths/P N C FR03.pdf",
+    "size": "34.3 mb",
+    "sizeBytes": 35916490,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1kg-7GERTeSuYcAQF7JNv4y5XJL892Jsh/view"
+  },
+  {
     "title": "Mechanical Properties of Solids",
     "rawName": "FR03 Mechanical Properties of Solids.pdf",
     "subject": "physics",
@@ -49,6 +119,66 @@ window.VAULT_DATA = [
     "sizeBytes": 42414154,
     "date": "2026-10-09",
     "url": "https://drive.google.com/file/d/1F-HzKcKChktHiSQX6AdTePDBHUtXcm-r/view"
+  },
+  {
+    "title": "Functions FR03 2",
+    "rawName": "Functions FR03 2.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Functions FR03 2.pdf",
+    "size": "48.7 mb",
+    "sizeBytes": 51055196,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1mB6uVYZpJ_tE-PnW2imyJkz0AqbmndpL/view"
+  },
+  {
+    "title": "Doubts Fr03-Quad",
+    "rawName": "Doubts Fr03-Quad.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Doubts Fr03-Quad.pdf",
+    "size": "6.4 mb",
+    "sizeBytes": 6698837,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1LmUB1SjCvFfYGBuIMyxKHHDlfZcYgkI4/view"
+  },
+  {
+    "title": "Complex Number FR03 2",
+    "rawName": "Complex Number FR03 2.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Complex Number FR03 2.pdf",
+    "size": "23.4 mb",
+    "sizeBytes": 24584443,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1UCU8P0WNg9-VukoxN5J2fm_lMSiJPWPT/view"
+  },
+  {
+    "title": "Complex Number FR03",
+    "rawName": "Complex Number FR03.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Complex Number FR03.pdf",
+    "size": "17.2 mb",
+    "sizeBytes": 18056330,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1nv6h_a0oL6yw5W8DEa3MISaQtx-Hryt2/view"
+  },
+  {
+    "title": "Binomial Theorem 3",
+    "rawName": "Binomial Theorem 3.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Binomial Theorem 3.pdf",
+    "size": "30.5 mb",
+    "sizeBytes": 31945415,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1IrwBL9KiOvHtE2pXDDqYsrpYeltryuPE/view"
+  },
+  {
+    "title": "Binomial Theorem 2",
+    "rawName": "Binomial Theorem 2.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Binomial Theorem 2.pdf",
+    "size": "13.7 mb",
+    "sizeBytes": 14340213,
+    "date": "2026-10-09",
+    "url": "https://drive.google.com/file/d/1lb1Hzhs_MFi8sxRJSqScva5XGGPmi1vo/view"
   },
   {
     "title": "Mechanical Properties of Fluids",
@@ -64,21 +194,21 @@ window.VAULT_DATA = [
     "title": "Step-3 Discussion",
     "rawName": "Step-3 Discussion.pdf",
     "subject": "physics",
-    "path": "notes/physics/Work, Energy and Power/Step-3 Discussion.pdf",
-    "size": "16.4 mb",
-    "sizeBytes": 17169866,
-    "date": "2026-10-04",
-    "url": "https://drive.google.com/file/d/1wdN6MgP8Nz5QTWdJCZVO4E9stXSd8jLy/view"
-  },
-  {
-    "title": "Step-3 Discussion",
-    "rawName": "Step-3 Discussion.pdf",
-    "subject": "physics",
     "path": "notes/physics/System of Particles and Rotational Motion/Step-3 Discussion.pdf",
     "size": "170 kb",
     "sizeBytes": 174752,
     "date": "2026-10-04",
     "url": "https://drive.google.com/file/d/1OA6nc8O9Hj9LEF_-X-WQjDx1dJ3NEVNj/view"
+  },
+  {
+    "title": "Step-3 Discussion",
+    "rawName": "Step-3 Discussion.pdf",
+    "subject": "physics",
+    "path": "notes/physics/Work, Energy and Power/Step-3 Discussion.pdf",
+    "size": "16.4 mb",
+    "sizeBytes": 17169866,
+    "date": "2026-10-04",
+    "url": "https://drive.google.com/file/d/1wdN6MgP8Nz5QTWdJCZVO4E9stXSd8jLy/view"
   },
   {
     "title": "Mathematics \u00b7 Lecture-9 - 2026/10/03 12:15 IST",
@@ -441,6 +571,16 @@ window.VAULT_DATA = [
     "url": "https://drive.google.com/file/d/1FWT2lXxRjgIaYD6XXVaOqQxMOA0N6Iqa/view"
   },
   {
+    "title": "Doubts 19",
+    "rawName": "Doubts 19.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Doubts 19.pdf",
+    "size": "34.1 mb",
+    "sizeBytes": 35785850,
+    "date": "2026-08-24",
+    "url": "https://drive.google.com/file/d/1Ok3PSuICUamQOsuGuTuOFIH49WZWVRFx/view"
+  },
+  {
     "title": "Work, Energy and Power",
     "rawName": "FR03 Work, Energy and Power.pdf",
     "subject": "physics",
@@ -501,6 +641,16 @@ window.VAULT_DATA = [
     "url": "https://drive.google.com/file/d/1OBId7BFaskIxrvchEOBdsh46c92g3hDI/view"
   },
   {
+    "title": "Trigonometry Assignment",
+    "rawName": "Trigonometry Assignment.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Assignments/Trigonometry Assignment.pdf",
+    "size": "1.7 mb",
+    "sizeBytes": 1787858,
+    "date": "2026-07-06",
+    "url": "https://drive.google.com/file/d/1uEY9qXQeLwWruTivWle54w1B6xkR2JLx/view"
+  },
+  {
     "title": "Motion in a Plane",
     "rawName": "FR03 Motion in a Plane.pdf",
     "subject": "physics",
@@ -521,6 +671,16 @@ window.VAULT_DATA = [
     "url": "https://drive.google.com/file/d/1ANuOWn2yaC3V7DuJALpSro9WchVyGxQF/view"
   },
   {
+    "title": "Doubts 12",
+    "rawName": "Doubts 12.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Doubts 12.pdf",
+    "size": "28.1 mb",
+    "sizeBytes": 29462805,
+    "date": "2026-06-28",
+    "url": "https://drive.google.com/file/d/1RaxBWspCUGo8nQD-GzzDIcCi55DOpi81/view"
+  },
+  {
     "title": "Periodic Classification",
     "rawName": "Periodic Classification.pdf",
     "subject": "chemistry",
@@ -539,6 +699,26 @@ window.VAULT_DATA = [
     "sizeBytes": 35266164,
     "date": "2026-06-26",
     "url": "https://drive.google.com/file/d/1RwZ-c1g3oG2vRFn40cwvjUv9rPAnOy9W/view"
+  },
+  {
+    "title": "Quad Assignment",
+    "rawName": "Fr03 Quad Assignment.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Assignments/Fr03 Quad Assignment.pdf",
+    "size": "3.0 mb",
+    "sizeBytes": 3159079,
+    "date": "2026-06-24",
+    "url": "https://drive.google.com/file/d/1A94vTXL9rBh8XFqyiOA9QFz6IgV1Gcl8/view"
+  },
+  {
+    "title": "Trigo Equation Assignment",
+    "rawName": "Trigo Equation Assignment.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Assignments/Trigo Equation Assignment.pdf",
+    "size": "1.8 mb",
+    "sizeBytes": 1842926,
+    "date": "2026-06-22",
+    "url": "https://drive.google.com/file/d/1DTthDIzQgzwiaMNBLu7TEnazOh3pHKC5/view"
   },
   {
     "title": "atomic structure answer key",
@@ -631,6 +811,26 @@ window.VAULT_DATA = [
     "url": "https://drive.google.com/file/d/12G7QuV1Ntu3-k37eV4ut8GQn52vavpJq/view"
   },
   {
+    "title": "Doubts 11",
+    "rawName": "Doubts 11.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Doubts 11.pdf",
+    "size": "24.7 mb",
+    "sizeBytes": 25853439,
+    "date": "2026-05-26",
+    "url": "https://drive.google.com/file/d/1cTc8mOv14ykA5401YN9IIoLxuC0StAmA/view"
+  },
+  {
+    "title": "Doubts 10",
+    "rawName": "Doubts 10.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Doubts 10.pdf",
+    "size": "14.6 mb",
+    "sizeBytes": 15277808,
+    "date": "2026-05-24",
+    "url": "https://drive.google.com/file/d/1vf9t9cgS2YcMa6ViFxejRXC2lWtQ8CJX/view"
+  },
+  {
     "title": "Test Atomic Structure",
     "rawName": "Test Atomic Structure.pdf",
     "subject": "chemistry",
@@ -639,6 +839,36 @@ window.VAULT_DATA = [
     "sizeBytes": 2031220,
     "date": "2026-05-19",
     "url": "https://drive.google.com/file/d/17cvFVQXTIEctab2xg8T1SRjvdccMIWvF/view"
+  },
+  {
+    "title": "Doubts 9",
+    "rawName": "Doubts 9.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Doubts 9.pdf",
+    "size": "20.6 mb",
+    "sizeBytes": 21553168,
+    "date": "2026-05-17",
+    "url": "https://drive.google.com/file/d/1qnwCLENI6tQUx_17ALHDN_2JqeExNU7I/view"
+  },
+  {
+    "title": "Practice Sheet",
+    "rawName": "Practice Sheet.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Practice Sheet.pdf",
+    "size": "9.4 mb",
+    "sizeBytes": 9824201,
+    "date": "2026-05-16",
+    "url": "https://drive.google.com/file/d/1U_j0I1-rYaWQhqN4rbZICaEnUokEWqAY/view"
+  },
+  {
+    "title": "Range Assignment",
+    "rawName": "Range Assignment.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Assignments/Range Assignment.pdf",
+    "size": "549 kb",
+    "sizeBytes": 562318,
+    "date": "2026-05-15",
+    "url": "https://drive.google.com/file/d/1wCW1JSE0mF-5-UuWwnuIWCblXxIv8JtF/view"
   },
   {
     "title": "Mole Concept Final answer key",
@@ -669,6 +899,16 @@ window.VAULT_DATA = [
     "sizeBytes": 21661871,
     "date": "2026-05-14",
     "url": "https://drive.google.com/file/d/1Gm10Wvu4_EXzfYbl1agjmM_aHytHUq0i/view"
+  },
+  {
+    "title": "assignment (1)",
+    "rawName": "assignment (1).pdf",
+    "subject": "maths",
+    "path": "notes/maths/Assignments/assignment (1).pdf",
+    "size": "124 kb",
+    "sizeBytes": 127493,
+    "date": "2026-05-08",
+    "url": "https://drive.google.com/file/d/1I04n9CyQ4kqB9uxJvOhJhvxSZKLIsZbr/view"
   },
   {
     "title": "Mole Concept Final",
@@ -709,6 +949,16 @@ window.VAULT_DATA = [
     "sizeBytes": 25583042,
     "date": "2026-05-03",
     "url": "https://drive.google.com/file/d/1fwqacMYWbSIIhYF46OWUCaV2FhRvRGvH/view"
+  },
+  {
+    "title": "Doubts 8",
+    "rawName": "Doubts 8.pdf",
+    "subject": "maths",
+    "path": "notes/maths/Doubts 8.pdf",
+    "size": "15.5 mb",
+    "sizeBytes": 16223920,
+    "date": "2026-04-28",
+    "url": "https://drive.google.com/file/d/1guGgCIvCthvevPWOPPttW6KCmNZsk6ui/view"
   },
   {
     "title": "DPP Answer Key 6-8",
