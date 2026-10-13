@@ -202,6 +202,18 @@ def main():
             import build_site
             build_site.main()
             print("[vault] github pages site data updated.")
+
+            # Auto-commit and push updated manifest and data to GitHub Pages
+            try:
+                repo_dir = Path(__file__).parent
+                status_res = subprocess.run(["git", "status", "--porcelain"], cwd=repo_dir, capture_output=True, text=True)
+                if "data.js" in status_res.stdout or "manifest.json" in status_res.stdout:
+                    subprocess.run(["git", "add", "manifest.json", "data.js"], cwd=repo_dir, check=True)
+                    subprocess.run(["git", "commit", "-m", "chore(vault): auto-sync manifest and site data"], cwd=repo_dir, check=True)
+                    subprocess.run(["git", "push"], cwd=repo_dir, check=True)
+                    print("[vault] committed and pushed site updates to github pages.")
+            except Exception as e:
+                print(f"[vault] git push notice: {e}", file=sys.stderr)
     except Exception as e:
         print(f"[vault] site build notice: {e}", file=sys.stderr)
 

@@ -137,9 +137,22 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
       font-family: var(--font-mono);
       font-size: 11px;
       color: #525252;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-sep {
+      color: #333;
     }
 
     footer a {
@@ -179,9 +192,22 @@
   </article>
 
   <footer>
-    <span>curated by <a href="https://h4rman.com" target="_blank" rel="noopener">h4rman</a> · personal study backup</span>
-    <span><a href="https://github.com/Harman209/fr03-vault" target="_blank" rel="noopener">source</a></span>
+    <div class="footer-left">
+      <span>curated by <a href="https://h4rman.com" target="_blank" rel="noopener">h4rman</a> · personal study backup</span>
+      <span class="footer-sep">·</span>
+      <span>last updated: <span id="lastUpdated">loading...</span></span>
+    </div>
+    <div>
+      <a href="https://github.com/Harman209/fr03-vault" target="_blank" rel="noopener">source</a>
+    </div>
   </footer>
 
+  <script src="data.js"></script>
+  <script>
+    if (window.VAULT_UPDATED) {
+      const el = document.getElementById('lastUpdated');
+      if (el) el.textContent = window.VAULT_UPDATED;
+    }
+  </script>
 </body>
 </html>
