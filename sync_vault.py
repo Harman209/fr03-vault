@@ -37,6 +37,14 @@ NOTES_DIRS = {
     "maths": "1IrFhswIBaxBjUeAjME-7WP6TfnNPe1pv",
 }
 
+# Short notes destination folders (under notes/shortnotes/)
+SHORTNOTES_DIRS = {
+    "root": "1WOj1R1bQzWu-bvdSrFOaOGuVTuK3vjvp",
+    "physics": "1SXgCIzg3vHfkUtLx64DOVMmthk77tB72",
+    "chemistry": "1CgBVPGcWa-3G2QGICl7GrBT41eTpSVYV",
+    "maths": "1YguoN8VNcW0fCSVfYn3610g5TiOj4oK3",
+}
+
 # Subject recordings destination folders (under recordings/)
 RECORDING_DIRS = {
     "physics": "1234nsnnGZstHG4-A5eaLzEDqKZ3JgSaq",

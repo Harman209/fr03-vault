@@ -153,7 +153,7 @@
 
     .list-header {
       display: grid;
-      grid-template-columns: 90px 85px 1fr 70px 60px;
+      grid-template-columns: 90px 105px 1fr 70px 60px;
       gap: 12px;
       font-family: var(--font-mono);
       font-size: 11px;
@@ -166,7 +166,7 @@
 
     .entry-row {
       display: grid;
-      grid-template-columns: 90px 85px 1fr 70px 60px;
+      grid-template-columns: 90px 105px 1fr 70px 60px;
       gap: 12px;
       align-items: baseline;
       padding: 10px 0;
@@ -319,6 +319,8 @@
         <span>·</span>
         <button class="filter-btn" data-filter="maths">maths (<span id="count-maths">0</span>)</button>
         <span>·</span>
+        <button class="filter-btn" data-filter="shortnotes">short notes (<span id="count-shortnotes">0</span>)</button>
+        <span>·</span>
         <button class="filter-btn" data-filter="recording">recordings (<span id="count-recording">0</span>)</button>
       </div>
     </div>
@@ -368,12 +370,21 @@
       document.getElementById('count-physics').textContent = data.filter(d => d.subject === 'physics').length;
       document.getElementById('count-chemistry').textContent = data.filter(d => d.subject === 'chemistry').length;
       document.getElementById('count-maths').textContent = data.filter(d => d.subject === 'maths').length;
+      document.getElementById('count-shortnotes').textContent = data.filter(d => d.isShortnote).length;
       document.getElementById('count-recording').textContent = data.filter(d => d.subject === 'recording').length;
 
       function render() {
         const query = searchQuery.toLowerCase().trim();
         const filtered = data.filter(item => {
-          const matchesFilter = (currentFilter === 'all') || (item.subject === currentFilter);
+          let matchesFilter = false;
+          if (currentFilter === 'all') {
+            matchesFilter = true;
+          } else if (currentFilter === 'shortnotes') {
+            matchesFilter = !!item.isShortnote;
+          } else {
+            matchesFilter = (item.subject === currentFilter);
+          }
+
           const matchesSearch = !query || 
             item.title.toLowerCase().includes(query) || 
             item.subject.toLowerCase().includes(query) ||
@@ -389,7 +400,7 @@
         container.innerHTML = filtered.map(item => `
           <div class="entry-row">
             <span class="col-date">${item.date}</span>
-            <span class="col-subject">${item.subject}</span>
+            <span class="col-subject">${item.subject}${item.isShortnote ? ' <span style="font-size:10px;color:#525252;">(sn)</span>' : ''}</span>
             <span class="col-title" title="${item.title}">${item.title}</span>
             <span class="col-size">${item.size}</span>
             <span class="col-action">

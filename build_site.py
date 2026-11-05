@@ -15,13 +15,16 @@ def parse_subject(path: str) -> str:
     path_lower = path.lower()
     if "recordings" in path_lower:
         return "recording"
-    if "notes/physics" in path_lower:
+    if "physics" in path_lower:
         return "physics"
-    if "notes/chemistry" in path_lower:
+    if "chemistry" in path_lower:
         return "chemistry"
-    if "notes/maths" in path_lower:
+    if "maths" in path_lower:
         return "maths"
     return "other"
+
+def is_shortnote(path: str) -> bool:
+    return "shortnote" in path.lower()
 
 def clean_title(name: str) -> str:
     title = name
@@ -72,6 +75,7 @@ def main():
             "title": title,
             "rawName": name,
             "subject": subject,
+            "isShortnote": is_shortnote(path),
             "path": path,
             "size": format_size(size),
             "sizeBytes": size,
@@ -93,6 +97,7 @@ def main():
                     "title": r.get("title", ""),
                     "rawName": r.get("title", ""),
                     "subject": "recording",
+                    "isShortnote": False,
                     "path": f"recordings/{r.get('sub_category', 'general')}",
                     "size": "stream",
                     "sizeBytes": 0,
