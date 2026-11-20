@@ -14,7 +14,6 @@ import argparse
 import tempfile
 import subprocess
 from pathlib import Path
-from PIL import Image
 
 # ==============================================================================
 # CANONICAL GOOGLE DRIVE OBJECT ID REGISTRY
@@ -74,7 +73,7 @@ SUBJECTS = {
     },
 }
 
-SIZE_THRESHOLD_BYTES = 35 * 1024 * 1024  # 35 MB
+SIZE_THRESHOLD_BYTES = 100 * 1024 * 1024  # 100 MB (Google Drive preview limit)
 
 def run_cmd(cmd, check=True):
     res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -99,6 +98,7 @@ def compress_pdf(input_path: Path, output_path: Path, dpi: int = 150, quality: i
     with tempfile.TemporaryDirectory() as tmp_dir:
         ppm_cmd = [
             "pdftoppm", "-jpeg",
+            "-jpegopt", f"quality={quality}",
             "-r", str(dpi),
             str(input_path),
             os.path.join(tmp_dir, "page")
@@ -111,16 +111,10 @@ def compress_pdf(input_path: Path, output_path: Path, dpi: int = 150, quality: i
         if not jpg_files:
             raise RuntimeError("no pages extracted from PDF")
 
-        images = [Image.open(f).convert("RGB") for f in jpg_files]
-        images[0].save(
-            str(output_path),
-            save_all=True,
-            append_images=images[1:],
-            quality=quality,
-            optimize=True
-        )
-        for img in images:
-            img.close()
+        img2pdf_cmd = ["img2pdf"] + jpg_files + ["-o", str(output_path)]
+        res_i2p = subprocess.run(img2pdf_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if res_i2p.returncode != 0:
+            raise RuntimeError(f"img2pdf failed: {res_i2p.stderr.decode('utf-8', errors='ignore')}")
 
 def sync_subject(subject_key: str):
     config = SUBJECTS[subject_key]
@@ -176,6 +170,9 @@ def sync_subject(subject_key: str):
             # Compress
             compress_pdf(local_raw, local_out, dpi=150, quality=82)
             compressed_mb = local_out.stat().st_size / (1024 * 1024)
+            if compressed_mb >= raw_mb:
+                print(f"[vault] {rel_path}: compressed size ({compressed_mb:.1f} MB) is not smaller than original ({raw_mb:.1f} MB). keeping original.")
+                continue
             savings = (1 - (compressed_mb / raw_mb)) * 100
             print(f"[vault] compressed to {compressed_mb:.1f} MB (saved {savings:.1f}%). uploading back...")
 
